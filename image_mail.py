@@ -32,14 +32,17 @@ msg['Subject'] = "SEND YES IF THIS IS WORKING FINE"
 msg['From'] = ''
 msg['To'] = ''
 
-text = MIMEText('<img src="cid:image1">', 'html')
+text = MIMEText('<img src="cid:image1"> <br/> <img src="cid:image2">', 'html')
 msg.attach(text)
 
 image = MIMEImage(open('img.jpg', 'rb').read())
+image_2 = MIMEImage(open('imag.jpg', 'rb').read())
 
 # Define the image's ID as referenced in the HTML body above
 image.add_header('Content-ID', '<image1>')
 msg.attach(image)
+image_2.add_header('Content-ID', '<image2>')
+msg.attach(image_2)
 
 with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
     smtp.login('','app_pwd') #Login to SMTP server
