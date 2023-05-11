@@ -1,6 +1,6 @@
 import RPi.GPIO as gpio
 gpio.setwarnings(0)
-gpio.setmode(gpio.BOARD)
+gpio.setmode(gpio.BCM)
 
 class Piezo_Sens:
     sensor_ID = 0 # sensor ID
@@ -15,7 +15,7 @@ class Piezo_Sens:
 
     def car_pass_callback(self,channel):
         self.car_pass+=1
-        print(f"car passed {self.car_pass}")
+        print(f"car passed {self.car_pass} - in direction {self.dir}")
 
     # def get_curr_state(self):
         #return gpio.input(self.pin_no)
@@ -32,4 +32,3 @@ if __name__=="__main__":
             continue
     except:
         __close_session()
-    
