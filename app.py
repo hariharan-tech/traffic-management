@@ -1,8 +1,14 @@
 from flask import Flask, jsonify, request, send_file
 from werkzeug.utils import secure_filename #used to store the image file with a name void of any accessing issues
-import telegram_bot
+# from threading import Thread
+# import telegram_bot
+# import mail_upload
+import hel_predict
 
+flag = False
 app = Flask(__name__)
+# t = Thread(target=hel_predict.predict)
+# t.start()
 
 @app.route('/')
 def hello_world():
@@ -28,7 +34,9 @@ def traffic_rules():
                 on the image and alert the telegram user in case the traffic rules are
                 violated using the telegram_bot.send_alert_telegram routine
             """
-            # telegram_bot.send_alert_telegram()
+            # mail_upload.send_mail_alert()
+            hel_predict.predict()
+            print("Applying machine learning models \nsending mail and telegram alert if violations are found..")
             return "File uploaded"
         else:
             return "Wrong input format"
