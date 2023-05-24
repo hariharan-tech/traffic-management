@@ -9,6 +9,7 @@ A smart traffic management system which will be deployed on a Raspberry Pi 4. Im
     - [https://pypi.org/project/pi74HC595/](https://pypi.org/project/pi74HC595/)
     - [https://www.ti.com/lit/ds/symlink/sn74hc595.pdf](https://www.ti.com/lit/ds/symlink/sn74hc595.pdf)
 - ## Accessing Camera
-  - Camera of raspberry pi 4 can be accessed using the raspistill (for images) and raspivid (for videos) [OUTDATED]
+  - Use ```raspistill``` for accessing and using Raspberry Pi camera.
+  - Using the ```raspistill``` (for images) and ```raspivid``` (for videos) **[OUTDATED]**.
     #### References
       - [https://www.raspberrypi.com/documentation/computers/camera_software.html#getting-started](https://www.raspberrypi.com/documentation/computers/camera_software.html#getting-started)
